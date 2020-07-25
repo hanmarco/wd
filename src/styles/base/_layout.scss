@@ -1,0 +1,52 @@
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+}
+html,
+body {
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", "SF Pro KR", "SF Pro Text", "SF Pro Icons",
+    "Apple Gothic", "HY Gulim", "MalgunGothic", "HY Dotum", "Lexi Gulim",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+a {
+  color: #111;
+  text-decoration: none;
+  list-style: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+*:focus {
+  outline: 0;
+}
+button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0px;
+  background-color: #fff;
+  border: 0;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.hide {
+  display: none;
+}
