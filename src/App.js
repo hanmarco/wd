@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import WebFont from "webfontloader";
+import TopContent from "components/TopContent";
+import MessageContent from "components/MessageContent";
+import Calendar from "components/Calendar";
+import Gallery from "components/Gallery";
+import Location from "components/Location";
+import Footer from "components/Footer";
 
 function App() {
   const [fontLoad, setFontLoad] = useState(false);
@@ -23,8 +29,13 @@ function App() {
     });
   }, []);
   return (
-    <div className="App">
-      <header className="App-header">은준이 사랑해</header>
+    <div className="app">
+      <TopContent />
+      <MessageContent />
+      <Calendar />
+      <Gallery />
+      <Location />
+      <Footer />
     </div>
   );
 }
