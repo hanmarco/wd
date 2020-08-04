@@ -34,6 +34,12 @@ body {
 .top-container {
   padding: $layoutPadding;
   padding-top: 38px;
+  &.load {
+    .image-wrap .image {
+      transition: clip 0.65s ease;
+      clip: rect(0, 100vw, 100vh, 0vw);
+    }
+  }
   .top-wrapper {
     position: relative;
     max-width: $maxWidth;
@@ -78,12 +84,14 @@ body {
     .image {
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 100%;
       height: 100%;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
+      clip: rect(0, 100vw, 100vh, 100vw);
     }
   }
   .name-box-wrapper {
