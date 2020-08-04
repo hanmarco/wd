@@ -4,9 +4,12 @@
 html,
 body {
   width: 100%;
+  height: 100%;
+  font-size: 13px;
 }
 .wrap {
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 //map marker
@@ -41,8 +44,11 @@ body {
         position: absolute;
         width: 220px;
         right: -40px;
-        top: 40px;
-        transform: rotate(-15deg);
+        top: 20px;
+
+        img {
+          width: 100%;
+        }
       }
       .tape {
         position: absolute;
@@ -431,5 +437,83 @@ body {
     font-size: 10px;
     color: rgba(0, 0, 0, 0.25);
     margin-top: 10px;
+  }
+}
+//loading
+.loading-box {
+  &-exit {
+    opacity: 1;
+  }
+  &-exit-active {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+}
+.main-loading-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 9900;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+
+  .main-loading {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    top: -20px;
+    overflow: hidden;
+  }
+  .progress-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 0;
+    height: 1px;
+    width: 140px;
+
+    margin: 0 auto;
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: 0.5s ease;
+    }
+  }
+  .text-wrap {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.8s ease;
+    opacity: 0;
+    transform: translate3d(0, 40px, 0) rotate(6deg) rotateX(-12deg);
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    &.active {
+      opacity: 1;
+      transform: translate3d(0, 0px, 0) rotate(0deg) rotateX(0deg);
+    }
+    .text {
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 15px;
+      white-space: nowrap;
+
+      font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue",
+        "Helvetica", "Arial", sans-serif;
+    }
   }
 }

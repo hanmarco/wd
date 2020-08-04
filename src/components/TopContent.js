@@ -1,17 +1,16 @@
 import React from "react";
 import BackImage from "./BackImage";
 import MainImage from "images/top.png";
-import { ReactComponent as TitleSub } from "images/title_sub.svg";
-
-function TopContent() {
+import classnames from "classnames";
+function TopContent({ load }) {
   return (
-    <div className="top-container">
+    <div className={classnames("top-container", { load: load })}>
       <div className="top-wrapper">
         <div className="main-image-wrap">
           <BackImage src={MainImage} />
 
           <div className="typo-graphic">
-            <TitleSub />
+            {load && <img src={require("../images/title_sub_animation.png")} />}
           </div>
           <div className="tape left" />
           <div className="tape right" />
