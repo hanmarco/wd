@@ -1,6 +1,8 @@
 {
   "name": "eunjoohyung-wedding",
   "version": "1.0.0",
+  "private": true,
+  "homepage": "https://eunjoohyung.netlify.app",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
