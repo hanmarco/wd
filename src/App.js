@@ -6,7 +6,6 @@ import Calendar from "components/Calendar";
 import Gallery from "components/Gallery";
 import Location from "components/Location";
 import Footer from "components/Footer";
-
 function App() {
   const [fontLoad, setFontLoad] = useState(false);
 
@@ -29,13 +28,16 @@ function App() {
     });
   }, []);
   return (
-    <div className="app">
+    <div className="wrap">
       <TopContent />
       <MessageContent />
       <Calendar />
       <Gallery />
       <Location />
       <Footer />
+      {/* <div className="demo">
+        <img src={require("./images/demo.png")} />
+      </div> */}
     </div>
   );
 }

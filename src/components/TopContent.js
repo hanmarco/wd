@@ -1,22 +1,31 @@
 import React from "react";
 import BackImage from "./BackImage";
 import MainImage from "images/top.png";
+import { ReactComponent as TitleSub } from "images/title_sub.svg";
+
 function TopContent() {
   return (
     <div className="top-container">
       <div className="top-wrapper">
-        <BackImage src={MainImage} />
-        <div className="name-box-wrapper">
-          <p>이은준</p>
-          <p>이주형</p>
+        <div className="main-image-wrap">
+          <BackImage src={MainImage} />
+
+          <div className="typo-graphic">
+            <TitleSub />
+          </div>
+          <div className="tape left" />
+          <div className="tape right" />
         </div>
         <div className="info-box-wrapper">
-          <h2>Save the date</h2>
-          <p className="date">2020 . 09 . 05</p>
-          <p className="location">양재역 엘타워 5층 오르체홀 오전 11시</p>
+          <div className="name-box-wrapper">
+            <span className="name">이주형</span>
+            <span className="slash" />
+            <span className="name">이은준</span>
+          </div>
+          <p className="date">9월 5일 토요일 오전 11시</p>
+          <p className="location">양재역 엘타워 5층 오르체홀</p>
         </div>
       </div>
-      <div className="arrow-bottom"></div>
     </div>
   );
 }
