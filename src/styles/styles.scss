@@ -39,13 +39,32 @@ body {
       .main-image-wrap .tape {
         clip: rect(0, 100vw, 100vh, 0vw);
         transition: all 0.3s ease;
-        transition-delay: 0.3s;
+        transition-delay: 0.4s;
       }
     }
     .image-wrap .image {
       transform: scale(1);
       opacity: 1;
-      transition: opacity 0.4s ease, transform 0.7s cubic-bezier(0.4, 0, 0.1, 1);
+      transition: opacity 0.4s ease, transform 0.7s $easeOut;
+    }
+    .name-box-wrapper {
+      .name {
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.5s $easeOut;
+        transition-delay: 0.4s;
+        &.second {
+          transition-delay: 0.5s;
+        }
+      }
+    }
+    .info-box-wrapper {
+      p {
+        opacity: 1;
+        transition: all 0.5s $easeOut;
+        transition-delay: 0.5s;
+        &.location {
+        }
+      }
     }
   }
   .top-wrapper {
@@ -107,6 +126,7 @@ body {
     text-align: center;
     margin-top: 40px;
     margin-bottom: 12px;
+    overflow: hidden;
     .name {
       position: relative;
       display: inline-block;
@@ -114,6 +134,7 @@ body {
       font-weight: 800;
       margin: 0 5px;
       vertical-align: middle;
+      transform: translate3d(0, 20px, 0);
     }
     .slash {
       display: inline-block;
@@ -153,6 +174,9 @@ body {
         -webkit-clip-path: url(#title_shape);
         clip-path: url(#title_shape);
       }
+    }
+    p {
+      opacity: 0;
     }
     .date {
       text-align: center;

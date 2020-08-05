@@ -17,9 +17,9 @@ function TopContent({ load }) {
         </div>
         <div className="info-box-wrapper">
           <div className="name-box-wrapper">
-            <span className="name">이주형</span>
+            <span className="name first">이주형</span>
             <span className="slash" />
-            <span className="name">이은준</span>
+            <span className="name second">이은준</span>
           </div>
           <p className="date">9월 5일 토요일 오전 11시</p>
           <p className="location">양재역 엘타워 5층 오르체홀</p>
