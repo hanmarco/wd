@@ -1,6 +1,6 @@
 import React from "react";
 import BackImage from "./BackImage";
-import MainImage from "images/top.png";
+import MainImage from "images/top.jpg";
 import classnames from "classnames";
 function TopContent({ load }) {
   return (
@@ -10,7 +10,12 @@ function TopContent({ load }) {
           <BackImage src={MainImage} />
 
           <div className="typo-graphic">
-            {load && <img src={require("../images/title_sub_animation.png")} />}
+            {load && (
+              <img
+                src={require("../images/title_sub_animation.png")}
+                alt="text_animation"
+              />
+            )}
           </div>
           <div className="tape left" />
           <div className="tape right" />

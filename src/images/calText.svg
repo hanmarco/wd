@@ -350,7 +350,7 @@
 			s-0.5,0.2-0.8,0.3V205.2z"/>
 	</g>
 	<g id="Rectangle" class="st3">
-		<rect x="55" y="17" class="st0" width="190" height="1"/>
+		<rect x="55" y="17"  width="190" height="1" fill="#000"/>
 	</g>
 </g>
 </svg>

@@ -1,14 +1,6 @@
 import React from "react";
 import { Parallax } from "react-scroll-parallax";
 
-const range = (len) => {
-  const arr = [];
-  for (let i = 0; i < len; i++) {
-    arr.push(i);
-  }
-  return arr;
-};
-
 function Particles() {
   const data = [
     {
@@ -17,27 +9,27 @@ function Particles() {
       top: 200,
     },
     {
-      x: 10,
+      x: -100,
       y: 10,
       top: 400,
     },
     {
-      x: 300,
+      x: 400,
       y: 10,
       top: 600,
     },
     {
-      x: 10,
+      x: -200,
       y: 10,
       top: 800,
     },
     {
-      x: 10,
+      x: 200,
       y: 10,
       top: 1000,
     },
     {
-      x: 10,
+      x: -50,
       y: 10,
       top: 1200,
     },
@@ -47,7 +39,7 @@ function Particles() {
     <div className="particle-container">
       {data.map((item, i) => {
         return (
-          <div className="particle-box" style={{ top: item.top }}>
+          <div key={i} className="particle-box" style={{ top: item.top }}>
             <Parallax
               key={`particle-${i}`}
               className="paral-particle"

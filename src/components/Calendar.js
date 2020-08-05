@@ -1,8 +1,9 @@
 import React from "react";
+import classnames from "classnames";
 import { ReactComponent as Cal } from "images/calText.svg";
-function Calendar() {
+function Calendar({ active }) {
   return (
-    <div className="calendar-container">
+    <div className={classnames("calendar-container", { active: active })}>
       <div className="calendar-wrapper">
         <div className="contents">
           <Cal />

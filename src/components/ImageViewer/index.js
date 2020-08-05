@@ -16,7 +16,7 @@ function ImageViewer({ data, index, name, onClose }) {
   useEffect(() => {
     const swiper = new Swiper(".swiper-container", {
       // Enable lazy loading
-      lazy: true,
+      loop: true,
       pagination: {
         el: ".swiper-pagination",
         type: "fraction",
@@ -53,7 +53,7 @@ function ImageViewer({ data, index, name, onClose }) {
               <Item
                 key={i}
                 imgRef={imgRef}
-                src={`${item.full}`}
+                src={`${item.img}`}
                 name={name ? name : item.name || null}
                 model={item.model || null}
                 date={item.date || null}

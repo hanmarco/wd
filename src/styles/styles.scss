@@ -264,6 +264,7 @@ body {
   padding: 57px 0px;
   width: 249px;
   margin: 0 auto;
+
   .calendar-wrapper {
     .contents {
       circle {
@@ -282,10 +283,13 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
+  max-width: $maxWidth;
   height: 100%;
   pointer-events: none;
-  overflow-x: hidden;
+
+  margin: 0 auto;
   .particle-box {
     position: absolute;
     left: 0;
@@ -325,8 +329,11 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-gap: 120px 0px;
     justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 30px;
     margin-bottom: 100px;
+    max-width: $maxWidth;
     .paral-image {
       position: relative;
       width: 106%;
@@ -340,13 +347,13 @@ body {
         top: 100px;
       }
       &:nth-child(3) {
-        top: 0px;
+        top: 20px;
       }
       &:nth-child(4) {
         top: 100px;
       }
       &:nth-child(5) {
-        top: 0px;
+        top: 20px;
         left: 20px;
       }
       &:nth-child(6) {
@@ -360,6 +367,11 @@ body {
       position: relative;
       width: 100%;
       padding-top: 100%;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+      &:active {
+        transform: scale(0.95);
+      }
       .image {
         position: absolute;
         top: 0;
@@ -389,7 +401,9 @@ body {
     width: 143px;
   }
   h2 {
+    position: relative;
     width: 100%;
+    z-index: 10;
   }
   p {
     position: absolute;
@@ -423,12 +437,21 @@ body {
 //location
 .location-container {
   padding: 60px 0;
+  max-width: $maxWidth;
+  margin: 0 auto;
   .map-wrapper {
     margin-top: 33px;
   }
   .info-box-wrapper {
+    position: relative;
     padding: $layoutPadding;
     padding-top: 56px;
+    .btn-call {
+      position: absolute;
+      right: 30px;
+      top: 60px;
+      width: 40px;
+    }
     .title {
       padding: 0;
       h3 {
@@ -443,6 +466,7 @@ body {
         font-size: 13px;
         margin-top: 13px;
         display: block;
+        color: rgba(0, 0, 0, 0.6);
       }
     }
     .dic {

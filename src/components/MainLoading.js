@@ -27,7 +27,7 @@ function MainLoading({ load, onEnd }) {
       }, 500);
     }
     return () => clearInterval(loaderInterval.current);
-  }, [progress, load]);
+  }, [progress, load, onEnd]);
 
   return (
     <div className="main-loading-wrap">

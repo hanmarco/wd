@@ -1,8 +1,8 @@
 /*global kakao*/
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { ReactComponent as MapTitle } from "images/map_title.svg";
 import { ReactComponent as MapTitleSub } from "images/map_title_sub.svg";
+import { ReactComponent as ButtonCall } from "images/btn_call.svg";
 function Location() {
   useEffect(() => {
     const s1 = document.createElement("script");
@@ -39,7 +39,9 @@ function Location() {
           map: map,
           position: position,
           image: markerImage,
+          clickable: true,
         });
+
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var customOverlay = new kakao.maps.CustomOverlay({
           position: position,
@@ -49,6 +51,10 @@ function Location() {
         });
         // 커스텀 오버레이를 지도에 표시합니다
         customOverlay.setMap(map);
+        kakao.maps.event.addListener(marker, "click", function () {
+          // 마커 위에 인포윈도우를 표시합니다
+          window.open("http://kko.to/pJ15sTzYp");
+        });
 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(position);
@@ -87,6 +93,9 @@ function Location() {
           <h3>주차</h3>
           <p>건물 내 주차장 500대 가능</p>
         </div>
+        <a className="btn-call" href="tel:02-526-8600">
+          <ButtonCall />
+        </a>
       </div>
     </div>
   );

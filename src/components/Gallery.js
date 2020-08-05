@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import BackImage from "./BackImage";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 import ImageViewer from "./ImageViewer";
 import { Parallax } from "react-scroll-parallax";
 import Particles from "components/Particles";
@@ -10,7 +10,7 @@ import { ReactComponent as GalleryTitleSub } from "images/gallery_title_sub.svg"
 const arrayFullData = (len) => {
   const arr = [];
   for (let i = 0; i < len; i++) {
-    const imageData = { full: require(`../images/full/full_${i + 1}.png`) };
+    const imageData = { img: require(`../images/full/full_${i + 1}.jpg`) };
     arr.push(imageData);
   }
   return arr;
@@ -18,31 +18,31 @@ const arrayFullData = (len) => {
 
 const data = [
   {
-    thumb: require("../images/thum_1.png"),
-    y: 0,
+    thumb: require("../images/thum_1.jpg"),
+    y: 5,
   },
   {
-    thumb: require("../images/thum_2.png"),
-    y: 30,
+    thumb: require("../images/thum_2.jpg"),
+    y: 40,
   },
   {
-    thumb: require("../images/thum_3.png"),
-    y: 10,
-  },
-  {
-    thumb: require("../images/thum_4.png"),
-    y: 10,
-  },
-  {
-    thumb: require("../images/thum_5.png"),
+    thumb: require("../images/thum_3.jpg"),
     y: 20,
   },
   {
-    thumb: require("../images/thum_6.png"),
-    y: 10,
+    thumb: require("../images/thum_4.jpg"),
+    y: 50,
   },
   {
-    thumb: require("../images/thum_7.png"),
+    thumb: require("../images/thum_5.jpg"),
+    y: 20,
+  },
+  {
+    thumb: require("../images/thum_6.jpg"),
+    y: -10,
+  },
+  {
+    thumb: require("../images/thum_7.jpg"),
     y: 30,
   },
 ];
@@ -51,7 +51,33 @@ const fullData = arrayFullData(12);
 function Gallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
-  const nodeRef = useRef(null);
+  useEffect(() => {
+    mainImageLoad({ data: fullData });
+  }, []);
+  const addImageProcess = ({ src }) => {
+    return new Promise((resolve, reject) => {
+      const img = document.createElement("img");
+      img.onload = (e) => {
+        resolve(true);
+      };
+      img.onerror = (err) => {
+        resolve(true);
+      };
+      img.src = `${src}`;
+    });
+  };
+
+  const mainImageLoad = async ({ data, count }) => {
+    if (Array.isArray(data)) {
+      const promises = await data.map(async (item, i) => {
+        await addImageProcess({
+          src: item.img,
+        });
+      });
+
+      await Promise.all(promises);
+    }
+  };
   const handleClick = (idx) => {
     setIndex(idx);
     setOpen(true);

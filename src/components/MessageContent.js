@@ -26,14 +26,12 @@ function MessageContent() {
             <span>고애숙의</span>
             <span className="role">차남</span>
             <span className="name">주형</span>
-            <a className="call" href="mailto:"></a>
           </div>
           <div className="dic">
             <span>이성원</span>
             <span>유승인의</span>
             <span className="role">장녀</span>
             <span className="name">은준</span>
-            <a className="call" href="mailto:"></a>
           </div>
         </div>
       </div>
