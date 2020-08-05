@@ -46,7 +46,7 @@ const data = [
     y: 30,
   },
 ];
-const fullData = arrayFullData(12);
+const fullData = arrayFullData(13);
 
 function Gallery() {
   const [open, setOpen] = useState(false);

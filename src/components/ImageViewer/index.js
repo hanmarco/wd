@@ -27,7 +27,7 @@ function ImageViewer({ data, index, name, onClose }) {
       },
       spaceBetween: 20,
     });
-    swiper.slideTo(index, 0);
+    swiper.slideTo(index + 1, 0);
     disableBodyScroll(imageViewerRef.current);
 
     return () => {
