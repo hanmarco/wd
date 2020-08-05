@@ -35,9 +35,17 @@ body {
   padding: $layoutPadding;
   padding-top: 38px;
   &.load {
+    .top-wrapper {
+      .main-image-wrap .tape {
+        clip: rect(0, 100vw, 100vh, 0vw);
+        transition: all 0.3s ease;
+        transition-delay: 0.3s;
+      }
+    }
     .image-wrap .image {
-      transition: clip 0.65s ease;
-      clip: rect(0, 100vw, 100vh, 0vw);
+      transform: scale(1);
+      opacity: 1;
+      transition: opacity 0.4s ease, transform 0.7s cubic-bezier(0.4, 0, 0.1, 1);
     }
   }
   .top-wrapper {
@@ -62,6 +70,7 @@ body {
         width: 54px;
         height: 16px;
         background: #2bf083;
+        clip: rect(0, 100vw, 100vh, 16vw);
         &.left {
           top: 7px;
           left: -15px;
@@ -70,7 +79,7 @@ body {
         &.right {
           bottom: 7px;
           right: -15px;
-          transform: rotate(-45deg);
+          transform: rotate(135deg);
         }
       }
     }
@@ -90,8 +99,8 @@ body {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-
-      clip: rect(0, 100vw, 100vh, 100vw);
+      opacity: 0;
+      transform: scale(1.1);
     }
   }
   .name-box-wrapper {
