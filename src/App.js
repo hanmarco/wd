@@ -57,7 +57,7 @@ function App() {
     });
   };
   const initLoad = async () => {
-    await loadFont();
+    loadFont();
     await mainImageLoad({ data: imageData });
     setPageLoad(true);
   };
