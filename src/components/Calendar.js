@@ -9,6 +9,8 @@ function Calendar({ active }) {
           <Cal />
         </div>
       </div>
+      <div className="bar" />
+      <div className="circle" />
     </div>
   );
 }

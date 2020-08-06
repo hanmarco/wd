@@ -261,10 +261,44 @@ body {
 }
 //calendar{
 .calendar-container {
-  padding: 57px 0px;
-  width: 249px;
-  margin: 0 auto;
+  position: relative;
 
+  width: 249px;
+  margin: 57px auto;
+  &.active {
+    .bar {
+      width: 190px;
+    }
+    .circle {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .bar {
+    position: absolute;
+    top: 17px;
+    left: 55px;
+    // width: 190px;
+    width: 0px;
+    height: 1px;
+    background-color: #000;
+    transition: all 0.7s $easeOut;
+  }
+  .circle {
+    position: absolute;
+    top: 42px;
+    right: 0;
+    width: 29px;
+    height: 29px;
+    background-color: #000;
+    border-radius: 30px;
+    z-index: -1;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease,
+      transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transition-delay: 0.2s;
+  }
   .calendar-wrapper {
     .contents {
       circle {
@@ -576,7 +610,6 @@ body {
       color: rgba(0, 0, 0, 0.8);
       font-size: 15px;
       white-space: nowrap;
-
       font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue",
         "Helvetica", "Arial", sans-serif;
     }

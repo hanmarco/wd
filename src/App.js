@@ -94,20 +94,23 @@ function App() {
       const offsetY = offset < 0 ? 0 : offset;
       const elemenTop = element.getBoundingClientRect().top + offsetY + 80;
       const elementPosition = elemenTop - windowHeight;
-      const isActive = offsetY >= elementPosition;
-      return render(isActive);
+      if (offsetY >= elementPosition) {
+        return render();
+      }
     }
   };
   const activeEle = (target) => {
     return handleParallax({
       element: target,
       offset: scrollY,
-      render: (isActive) => {
-        return isActive ? true : false;
+      render: () => {
+        return true;
       },
     });
   };
+
   const calDom = document.querySelector(".calendar-container");
+
   return (
     <div className="wrap">
       <TopContent load={!isLoading} />
