@@ -72,7 +72,7 @@ function ImageViewer({ data, index, name, onClose }) {
       <div
         className="image-viewer-close"
         onClick={handleClose}
-        style={{ backgroundImage: `url(${require("images/btn-close.svg")})` }}
+       
       />
     </div>
   );
