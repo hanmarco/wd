@@ -82,7 +82,7 @@ function Location() {
         </div>
         <div className="dic subway">
           <h3>지하철</h3>
-          <p>3호선 양재역 10번출구 바로 앞</p>
+          <p>3호선 양재역 9번출구 바로 앞</p>
         </div>
         <div className="dic bus">
           <h3>버스</h3>
@@ -91,7 +91,8 @@ function Location() {
         </div>
         <div className="dic parking">
           <h3>주차</h3>
-          <p>건물 내 주차장 500대 가능</p>
+          <p>엘타워 주차장 700대와</p>
+          <p>바로 옆 환승주자창 900대 이용 가능</p>
         </div>
         <a className="btn-call" href="tel:02-526-8600">
           <ButtonCall />
