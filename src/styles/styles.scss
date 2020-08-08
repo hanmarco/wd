@@ -38,8 +38,8 @@ body {
     .top-wrapper {
       .main-image-wrap .tape {
         clip: rect(0, 100vw, 100vh, 0vw);
-        transition: all 0.3s ease;
-        transition-delay: 0.4s;
+        transition: all 0.4s ease;
+        transition-delay: 0.7s;
       }
     }
     .image-wrap .image {
@@ -201,8 +201,8 @@ body {
 //message content
 .message-container {
   background-color: #f6f6f6;
-  padding: 62px 50px;
-  margin-top: 48px;
+  padding: 70px 50px;
+  margin-top: 58px;
   .message {
     p {
       font-size: 15px;
@@ -228,6 +228,7 @@ body {
     }
     .dic {
       span {
+        font-size: 16px;
         &:nth-child(2) {
           position: relative;
           padding-left: 10px;
@@ -264,7 +265,7 @@ body {
   position: relative;
 
   width: 249px;
-  margin: 57px auto;
+  margin: 70px auto;
   &.active {
     .bar {
       width: 190px;
@@ -565,7 +566,7 @@ body {
   .main-loading {
     position: relative;
     width: 150px;
-    height: 40px;
+    height: 33px;
     top: -20px;
     overflow: hidden;
   }
@@ -608,8 +609,9 @@ body {
     }
     .text {
       color: rgba(0, 0, 0, 0.8);
-      font-size: 15px;
+      font-size: 14px;
       white-space: nowrap;
+      font-weight: 500;
       font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue",
         "Helvetica", "Arial", sans-serif;
     }

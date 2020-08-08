@@ -1,8 +1,16 @@
-import React from "react";
+import React ,{useState, useEffect}from "react";
 import BackImage from "./BackImage";
 import MainImage from "images/top.jpg";
 import classnames from "classnames";
 function TopContent({ load }) {
+  const [imageLoad,setImageLoad] = useState(false)
+  useEffect(()=>{
+    if(load){
+      setTimeout(() => {
+        setImageLoad(true)
+      }, 500);
+    }
+  },[load])
   return (
     <div className={classnames("top-container", { load: load })}>
       <div className="top-wrapper">
@@ -10,7 +18,7 @@ function TopContent({ load }) {
           <BackImage src={MainImage} />
 
           <div className="typo-graphic">
-            {load && (
+            {imageLoad && (
               <img
                 src={require("../images/title_sub_animation.png")}
                 alt="text_animation"
