@@ -23,15 +23,15 @@ const data = [
   },
   {
     thumb: require("../images/thum_2.jpg"),
-    y: 40,
+    y: 30,
   },
   {
     thumb: require("../images/thum_3.jpg"),
-    y: 20,
+    y: 30,
   },
   {
     thumb: require("../images/thum_4.jpg"),
-    y: 50,
+    y: 20,
   },
   {
     thumb: require("../images/thum_5.jpg"),
