@@ -3,10 +3,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   z-index: 9700;
   background: #000;
   overflow: hidden;
@@ -70,7 +68,7 @@
 }
 .image-viewer-close {
   position: absolute;
-  top: 23px;
+  top: 14px;
   right: 14px;
   background-position: center;
   background-repeat: no-repeat;
@@ -142,7 +140,7 @@
 }
 .swiper-pagination-fraction {
   position: absolute;
-  margin-bottom: 20px;
+  right:20px;
   bottom: 25px;
   text-align: right;
   color: #999999;
