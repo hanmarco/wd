@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="29px" height="28px" viewBox="0 0 29 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>btn_close</title>
+    <defs>
+        <filter x="-55.3%" y="-63.9%" width="210.5%" height="227.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.62377076 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="청첩장_주형은준_2" transform="translate(-335.000000, -119.000000)" stroke="#FFFFFF">
+        <g id="청첩장_주형은준_2" transform="translate(-333.000000, -116.000000)" stroke="#FFFFFF">
             <g id="btn_close" transform="translate(334.000000, 117.000000)">
-                <g transform="translate(2.000000, 2.000000)">
-                    <line x1="22.4941406" y1="0" x2="0.494140625" y2="22" id="Path-3"></line>
-                    <line x1="0.494140625" y1="0" x2="22.4941406" y2="22" id="Path-3-Copy"></line>
+                <g filter="url(#filter-1)" transform="translate(4.000000, 4.000000)">
+                    <line x1="18.4941406" y1="0" x2="0.494140625" y2="18" id="Path-3"></line>
+                    <line x1="0.494140625" y1="0" x2="18.4941406" y2="18" id="Path-3-Copy"></line>
                 </g>
             </g>
         </g>

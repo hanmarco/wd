@@ -140,7 +140,8 @@
 }
 .swiper-pagination-fraction {
   position: absolute;
-  bottom: 20px;
+  margin-bottom: 20px;
+  bottom: env(safe-area-inset-bottom);
   right: 20px;
   text-align: right;
   color: #999999;

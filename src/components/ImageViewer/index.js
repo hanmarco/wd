@@ -63,10 +63,10 @@ function ImageViewer({ data, index, name, onClose }) {
         </div>
         <div className="swiper-pagination"></div>
         <div ref={nextRef} className="btn-nav btn-next">
-          <Arrow type="next" white={true} />
+         
         </div>
         <div ref={prevRef} className="btn-nav btn-prev">
-          <Arrow type="prev" white={true} />
+         
         </div>
       </div>
       <div
