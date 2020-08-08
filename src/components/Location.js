@@ -72,7 +72,7 @@ function Location() {
         </p>
       </div>
       <div className="map-wrapper">
-        <div id="map" style={{ width: "100%", height: "282px" }}></div>
+        <div id="map" style={{ width: "100%", height: "210px" }}></div>
       </div>
       <div className="info-box-wrapper">
         <div className="title">
