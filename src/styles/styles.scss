@@ -404,9 +404,7 @@ body {
       padding-top: 100%;
       transform: scale(1);
       transition: transform 0.3s ease;
-      &:active {
-        transform: scale(0.95);
-      }
+      
       .image {
         position: absolute;
         top: 0;

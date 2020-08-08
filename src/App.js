@@ -92,7 +92,7 @@ function App() {
     const windowHeight = window.innerHeight;
     if (element) {
       const offsetY = offset < 0 ? 0 : offset;
-      const elemenTop = element.getBoundingClientRect().top + offsetY + 150;
+      const elemenTop = element.getBoundingClientRect().top + offsetY + 180;
       const elementPosition = elemenTop - windowHeight;
       if (offsetY >= elementPosition) {
         return render();
