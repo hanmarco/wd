@@ -48,7 +48,7 @@ body {
       transition: opacity 0.4s ease, transform 0.7s $easeOut;
     }
     .name-box-wrapper {
-      .slash{
+      .slash {
         transition: opacity 0.3s ease;
         transition-delay: 0.4s;
         opacity: 1;
@@ -293,8 +293,8 @@ body {
   }
   .circle {
     position: absolute;
-    top: 42px;
-    right: 0;
+    top: 82px;
+    right: -6px;
     width: 29px;
     height: 29px;
     background-color: #000;
@@ -410,7 +410,7 @@ body {
       padding-top: 100%;
       transform: scale(1);
       transition: transform 0.3s ease;
-      
+
       .image {
         position: absolute;
         top: 0;

@@ -1,16 +1,16 @@
-import React ,{useState, useEffect}from "react";
+import React, { useState, useEffect } from "react";
 import BackImage from "./BackImage";
 import MainImage from "images/top.jpg";
 import classnames from "classnames";
 function TopContent({ load }) {
-  const [imageLoad,setImageLoad] = useState(false)
-  useEffect(()=>{
-    if(load){
+  const [imageLoad, setImageLoad] = useState(false);
+  useEffect(() => {
+    if (load) {
       setTimeout(() => {
-        setImageLoad(true)
+        setImageLoad(true);
       }, 500);
     }
-  },[load])
+  }, [load]);
   return (
     <div className={classnames("top-container", { load: load })}>
       <div className="top-wrapper">
@@ -34,7 +34,7 @@ function TopContent({ load }) {
             <span className="slash" />
             <span className="name second">이은준</span>
           </div>
-          <p className="date">9월 5일 토요일 오전 11시</p>
+          <p className="date">2021년 1월 9일 토요일 오전 11시</p>
           <p className="location">양재역 엘타워 5층 오르체홀</p>
         </div>
       </div>
