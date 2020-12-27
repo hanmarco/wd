@@ -40,16 +40,9 @@ export default function Popup({ data, onClose, show }) {
       toastContainer.classList.remove("active");
     }, 1500);
   };
-  const handleClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
+
   return (
-    <div
-      ref={giftRef}
-      className={classnames("gift-box", { show: show })}
-      onClick={handleClick}
-    >
+    <div ref={giftRef} className={classnames("gift-box", { show: show })}>
       {data.map((item, i) => {
         return (
           <div className="gif-content" key={i}>

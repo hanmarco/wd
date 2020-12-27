@@ -492,7 +492,7 @@ body {
     .title {
       padding: 0;
       h3 {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.3;
         text-align: center;
         font-weight: 600;
@@ -627,14 +627,14 @@ body {
 }
 .gift-container {
   padding: 0 30px;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  margin-bottom: 40px;
   h2 {
     text-align: center;
-
-    margin-bottom: 25px;
-    font-size: 20px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    font-size: 18px;
     font-weight: 700;
+    border-top: solid 1px rgba(0, 0, 0, 0.12);
   }
   .dic {
     position: relative;
