@@ -36,7 +36,6 @@ const data = [
   {
     thumb: require("../images/thum_5.jpg"),
     y: 30,
-    x: 20,
   },
 ];
 const fullData = arrayFullData(28);

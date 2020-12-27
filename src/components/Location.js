@@ -86,14 +86,8 @@ function Location() {
           <p>3호선 양재역 9번출구 바로 앞</p>
         </div>
         <div className="dic bus">
-          <h3>버스</h3>
-          <p>지선 : 3412, 4432, 4435</p>
-          <p>간선 : 140, 400, 405, 407, 421, 440</p>
-        </div>
-        <div className="dic parking">
           <h3>주차</h3>
-          <p>엘타워 주차장 700대와</p>
-          <p>바로 옆 환승주자창 900대 이용 가능</p>
+          <p>건물 내 주차장 1600대 가능</p>
         </div>
       </div>
     </div>

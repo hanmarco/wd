@@ -45,6 +45,7 @@ export default function Gift() {
   };
   return (
     <div className="gift-container">
+      <h2>신랑신부에게 축의금 전하기</h2>
       <div className="dic">
         <div className="btn-more" onClick={() => handleShow("m")}>
           신랑 계좌번호 보기
