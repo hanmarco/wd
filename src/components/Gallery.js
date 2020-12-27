@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import BackImage from "./BackImage";
 import { CSSTransition } from "react-transition-group";
 import ImageViewer from "./ImageViewer";
@@ -19,30 +19,22 @@ const arrayFullData = (len) => {
 const data = [
   {
     thumb: require("../images/thum_1.jpg"),
-    y: 5,
+    y: 0,
   },
   {
     thumb: require("../images/thum_2.jpg"),
-    y: 30,
+    y: 50,
   },
   {
     thumb: require("../images/thum_3.jpg"),
-    y: 30,
+    y: 100,
   },
   {
     thumb: require("../images/thum_4.jpg"),
-    y: 20,
+    y: 80,
   },
   {
     thumb: require("../images/thum_5.jpg"),
-    y: 20,
-  },
-  {
-    thumb: require("../images/thum_6.jpg"),
-    y: -10,
-  },
-  {
-    thumb: require("../images/thum_7.jpg"),
     y: 30,
   },
 ];
@@ -51,9 +43,7 @@ const fullData = arrayFullData(28);
 function Gallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
-  useEffect(() => {
-    mainImageLoad({ data: fullData });
-  }, []);
+
   const addImageProcess = ({ src }) => {
     return new Promise((resolve, reject) => {
       const img = document.createElement("img");
@@ -66,10 +56,9 @@ function Gallery() {
       img.src = `${src}`;
     });
   };
-
-  const mainImageLoad = async ({ data, count }) => {
-    if (Array.isArray(data)) {
-      const promises = await data.map(async (item, i) => {
+  const galleryImageLoad = useCallback(async () => {
+    if (Array.isArray(fullData)) {
+      const promises = await fullData.map(async (item, i) => {
         await addImageProcess({
           src: item.img,
         });
@@ -77,7 +66,10 @@ function Gallery() {
 
       await Promise.all(promises);
     }
-  };
+  }, []);
+  useEffect(() => {
+    galleryImageLoad();
+  }, [galleryImageLoad]);
   const handleClick = (idx) => {
     setIndex(idx);
     setOpen(true);

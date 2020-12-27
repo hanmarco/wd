@@ -7,7 +7,6 @@ function Item({ src, name, imgRef }) {
       <div className="image">
         <img ref={imgRef} src={src} className="swiper-lazy" />
       </div>
-      {/* <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div> */}
     </div>
   );
 }

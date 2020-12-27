@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import Swiper from "swiper";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import Item from "./Item";
-import Arrow from "components/Buttons/Arrow";
 
 import "./swiper.scss";
 import "./image-viewer.scss";
@@ -62,18 +61,10 @@ function ImageViewer({ data, index, name, onClose }) {
           })}
         </div>
         <div className="swiper-pagination"></div>
-        <div ref={nextRef} className="btn-nav btn-next">
-         
-        </div>
-        <div ref={prevRef} className="btn-nav btn-prev">
-         
-        </div>
+        <div ref={nextRef} className="btn-nav btn-next"></div>
+        <div ref={prevRef} className="btn-nav btn-prev"></div>
       </div>
-      <div
-        className="image-viewer-close"
-        onClick={handleClose}
-       
-      />
+      <div className="image-viewer-close" onClick={handleClose} />
     </div>
   );
 }

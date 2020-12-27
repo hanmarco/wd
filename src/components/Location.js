@@ -2,7 +2,6 @@
 import React, { useEffect } from "react";
 import { ReactComponent as MapTitle } from "images/map_title.svg";
 import { ReactComponent as MapTitleSub } from "images/map_title_sub.svg";
-import { ReactComponent as ButtonCall } from "images/btn_call.svg";
 function Location() {
   useEffect(() => {
     const s1 = document.createElement("script");
@@ -78,7 +77,9 @@ function Location() {
         <div className="title">
           <h3>서울 서초구 강남대로 213</h3>
           <h3>엘타워 5층 오르체홀</h3>
-          <span className="tel">02-526-8600</span>
+          <a href="tel:02-526-8600" className="tel">
+            02-526-8600
+          </a>
         </div>
         <div className="dic subway">
           <h3>지하철</h3>
@@ -94,9 +95,6 @@ function Location() {
           <p>엘타워 주차장 700대와</p>
           <p>바로 옆 환승주자창 900대 이용 가능</p>
         </div>
-        <a className="btn-call" href="tel:02-526-8600">
-          <ButtonCall />
-        </a>
       </div>
     </div>
   );

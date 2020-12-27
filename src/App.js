@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import WebFont from "webfontloader";
 import TopContent from "components/TopContent";
 import MessageContent from "components/MessageContent";
 import Calendar from "components/Calendar";
 import Gallery from "components/Gallery";
 import Location from "components/Location";
+import Gift from "components/Gift";
 import Footer from "components/Footer";
 import MainLoading from "components/MainLoading";
 const imageData = [
@@ -19,14 +19,28 @@ const imageData = [
 ];
 function App() {
   const loadingRef = useRef(null);
-  const [fontLoad, setFontLoad] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [pageLoad, setPageLoad] = useState(false);
+  const mainImageLoad = useCallback(async ({ data, count }) => {
+    if (Array.isArray(data)) {
+      await Promise.all(
+        data.map(async (item, i) => {
+          await addImageProcess({
+            src: item.img,
+          });
+        })
+      );
+    }
+  }, []);
+  const initLoad = useCallback(async () => {
+    await mainImageLoad({ data: imageData });
+    setPageLoad(true);
+  }, [mainImageLoad]);
   useEffect(() => {
     initLoad();
     window.addEventListener("scroll", onScroll);
-  }, []);
+  }, [initLoad]);
   useEffect(() => {
     if (isLoading) {
       disableBodyScroll(loadingRef.current);
@@ -39,28 +53,7 @@ function App() {
 
     setScrollY(scrollTop);
   };
-  const loadFont = () => {
-    WebFont.load({
-      google: {
-        families: ["Nanum Myeongjo:400,800"],
-      },
-      loading: function () {
-        setFontLoad(false);
-      },
-      inactive: () => {
-        setFontLoad(true);
-      },
-      active: function () {
-        console.log("load font");
-        setFontLoad(true);
-      },
-    });
-  };
-  const initLoad = async () => {
-    loadFont();
-    await mainImageLoad({ data: imageData });
-    setPageLoad(true);
-  };
+
   const onLoadingEnd = () => {
     setIsLoading(false);
   };
@@ -77,17 +70,6 @@ function App() {
     });
   };
 
-  const mainImageLoad = async ({ data, count }) => {
-    if (Array.isArray(data)) {
-      const promises = await data.map(async (item, i) => {
-        await addImageProcess({
-          src: item.img,
-        });
-      });
-
-      await Promise.all(promises);
-    }
-  };
   const handleParallax = ({ element = null, offset = 0, render }) => {
     const windowHeight = window.innerHeight;
     if (element) {
@@ -114,11 +96,17 @@ function App() {
   return (
     <div className="wrap">
       <TopContent load={!isLoading} />
-      <MessageContent />
-      <Calendar active={activeEle(calDom)} />
-      <Gallery />
-      <Location />
-      <Footer />
+      {pageLoad && (
+        <>
+          <MessageContent />
+          <Calendar active={activeEle(calDom)} />
+          <Gallery />
+          <Location />
+          <Gift />
+          <Footer />
+        </>
+      )}
+
       <TransitionGroup component={React.Fragment}>
         {isLoading && (
           <CSSTransition
@@ -132,9 +120,7 @@ function App() {
           </CSSTransition>
         )}
       </TransitionGroup>
-      {/* <div className="demo">
-        <img src={require("./images/demo.png")} />
-      </div> */}
+      <div id="toast-container" />
     </div>
   );
 }
