@@ -10,21 +10,21 @@ export default function Gift() {
         account: "90190367037",
       },
       {
-        title: "신랑 이주형 계좌번호",
-        bank: "국민은행",
-        account: "90190367037",
+        title: "신랑 혼주 이재풍 계좌번호",
+        bank: "농협",
+        account: "3520754218303",
       },
     ],
     woman: [
       {
-        title: "신랑 이주형 계좌번호",
+        title: "신부 이은준 계좌번호",
         bank: "국민은행",
-        account: "90190367037",
+        account: "98930244362",
       },
       {
-        title: "신랑 이주형 계좌번호",
+        title: "신부 혼주 이성원 계좌번호",
         bank: "국민은행",
-        account: "90190367037",
+        account: "79620201023785",
       },
     ],
   };
