@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import BackImage from "./BackImage";
 import { CSSTransition } from "react-transition-group";
 import ImageViewer from "./ImageViewer";
-import { Parallax } from "react-scroll-parallax";
+import { Parallax, useController } from "react-scroll-parallax";
 import Particles from "components/Particles";
 import { ReactComponent as GalleryTitle } from "images/gallery_title.svg";
 import { ReactComponent as GalleryTitleSub } from "images/gallery_title_sub.svg";
@@ -23,19 +23,20 @@ const data = [
   },
   {
     thumb: require("../images/thum_2.jpg"),
-    y: 50,
+    y: -30,
   },
   {
     thumb: require("../images/thum_3.jpg"),
-    y: 100,
+    y: 30,
   },
   {
     thumb: require("../images/thum_4.jpg"),
-    y: 80,
+    y: -30,
   },
   {
     thumb: require("../images/thum_5.jpg"),
     y: 30,
+    x: 20,
   },
 ];
 const fullData = arrayFullData(28);
@@ -43,19 +44,24 @@ const fullData = arrayFullData(28);
 function Gallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const { parallaxController } = useController();
 
-  const addImageProcess = ({ src }) => {
-    return new Promise((resolve, reject) => {
-      const img = document.createElement("img");
-      img.onload = (e) => {
-        resolve(true);
-      };
-      img.onerror = (err) => {
-        resolve(true);
-      };
-      img.src = `${src}`;
-    });
-  };
+  const addImageProcess = useCallback(
+    ({ src }) => {
+      return new Promise((resolve, reject) => {
+        const img = document.createElement("img");
+        img.onload = (e) => {
+          parallaxController.update();
+          resolve(true);
+        };
+        img.onerror = (err) => {
+          resolve(true);
+        };
+        img.src = `${src}`;
+      });
+    },
+    [parallaxController]
+  );
   const galleryImageLoad = useCallback(async () => {
     if (Array.isArray(fullData)) {
       const promises = await fullData.map(async (item, i) => {
@@ -66,7 +72,7 @@ function Gallery() {
 
       await Promise.all(promises);
     }
-  }, []);
+  }, [addImageProcess]);
   useEffect(() => {
     galleryImageLoad();
   }, [galleryImageLoad]);
@@ -94,9 +100,8 @@ function Gallery() {
               <Parallax
                 key={`copy-${i}`}
                 className="paral-image"
-                offsetYMin={-item.y}
-                offsetYMax={item.y}
-                slowerScrollRate
+                y={[-item.y, item.y]}
+                x={[-item.x || 0, item.x || 0]}
               >
                 <div onClick={handleClick.bind(this, i)}>
                   <BackImage key={i} src={item.thumb} />

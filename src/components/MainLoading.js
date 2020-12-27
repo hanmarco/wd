@@ -23,7 +23,7 @@ function MainLoading({ load, onEnd }) {
         window.scrollTo(0, 0);
         setTimeout(() => {
           return onEnd(true);
-        }, 1000);
+        }, 800);
       }, 500);
     }
     return () => clearInterval(loaderInterval.current);

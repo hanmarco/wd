@@ -4,7 +4,7 @@ import { Parallax } from "react-scroll-parallax";
 function Particles() {
   const data = [
     {
-      x: -50,
+      x: 100,
       y: 100,
       top: 200,
     },
@@ -43,9 +43,8 @@ function Particles() {
             <Parallax
               key={`particle-${i}`}
               className="paral-particle"
-              offsetYMax={item.y}
-              offsetXMin={item.x}
-              slowerScrollRate
+              y={[-item.y, item.y]}
+              x={[-item.x, item.x]}
             >
               <div key={i} className={`particle ${i % 3 === 0 && "even"}`} />
             </Parallax>

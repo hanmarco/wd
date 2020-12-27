@@ -20,6 +20,8 @@ function TopContent({ load }) {
           <div className="typo-graphic">
             {imageLoad && (
               <img
+                width={220}
+                height={80}
                 src={require("../images/title_sub_animation.png")}
                 alt="text_animation"
               />

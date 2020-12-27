@@ -1,5 +1,4 @@
 /* autoprefixer grid: autoplace */
-@import "./fonts/nanumsquare";
 @import "./base/normalize";
 @import "./base/variable";
 @import "./base/layout";
@@ -396,10 +395,6 @@ body {
       &:nth-child(5) {
         left: 20px;
       }
-      &:nth-child(6) {
-      }
-      &:nth-child(7) {
-      }
     }
     .image-wrap {
       position: relative;
@@ -417,6 +412,7 @@ body {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-color: #f8f8f8;
       }
     }
   }
@@ -551,7 +547,7 @@ body {
   }
   &-exit-active {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.2s ease;
   }
 }
 .main-loading-wrap {
@@ -601,7 +597,7 @@ body {
     width: 100%;
     display: block;
     text-align: center;
-    transition: opacity 0.3s ease, transform 0.8s ease;
+    transition: opacity 0.3s ease, transform 0.6s ease;
     opacity: 0;
     transform: translate3d(0, 40px, 0) rotate(6deg) rotateX(-12deg);
     -webkit-perspective: 1200px;

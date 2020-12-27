@@ -109,11 +109,7 @@ function App() {
 
       <TransitionGroup component={React.Fragment}>
         {isLoading && (
-          <CSSTransition
-            key={isLoading}
-            timeout={1000}
-            classNames="loading-box"
-          >
+          <CSSTransition key={isLoading} timeout={800} classNames="loading-box">
             <div ref={loadingRef}>
               <MainLoading load={pageLoad} onEnd={onLoadingEnd} />
             </div>
