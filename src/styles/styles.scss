@@ -717,7 +717,7 @@ body {
 }
 #toast-container {
   position: fixed;
-  bottom: 30px;
+  top: 30px;
   width: 100px;
   height: 38px;
   margin: auto;
@@ -726,10 +726,10 @@ body {
   text-align: center;
   line-height: 40px;
   opacity: 0;
-  transform: translate3d(0, 10px, 0);
+  transform: translate3d(0, -10px, 0);
   visibility: hidden;
   border-radius: 50px;
-  font-size: 11px;
+  font-size: 14px;
   left: 0;
   right: 0;
   transition: all 0.25s ease;
