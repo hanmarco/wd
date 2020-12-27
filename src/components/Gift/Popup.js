@@ -1,6 +1,24 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import classnames from "classnames";
 export default function Popup({ data, onClose, show }) {
+  const giftRef = useRef(null);
+  const handleOutsideClick = useCallback(
+    (e) => {
+      if (show) {
+        if (giftRef.current && !giftRef.current.contains(e.target)) {
+          return onClose();
+        }
+      }
+    },
+    [onClose, show]
+  );
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [handleOutsideClick]);
+
   const timer = useRef(null);
   const copyAccount = (item) => {
     clearTimeout(timer.current);
@@ -22,8 +40,16 @@ export default function Popup({ data, onClose, show }) {
       toastContainer.classList.remove("active");
     }, 1500);
   };
+  const handleClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
   return (
-    <div className={classnames("gift-box", { show: show })}>
+    <div
+      ref={giftRef}
+      className={classnames("gift-box", { show: show })}
+      onClick={handleClick}
+    >
       {data.map((item, i) => {
         return (
           <div className="gif-content" key={i}>

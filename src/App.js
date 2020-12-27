@@ -3,7 +3,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import TopContent from "components/TopContent";
 import MessageContent from "components/MessageContent";
-import Calendar from "components/Calendar";
+// import Calendar from "components/Calendar";
 import Gallery from "components/Gallery";
 import Location from "components/Location";
 import Gift from "components/Gift";
@@ -19,7 +19,7 @@ const imageData = [
 ];
 function App() {
   const loadingRef = useRef(null);
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [pageLoad, setPageLoad] = useState(false);
   const mainImageLoad = useCallback(async ({ data, count }) => {
@@ -39,7 +39,7 @@ function App() {
   }, [mainImageLoad]);
   useEffect(() => {
     initLoad();
-    window.addEventListener("scroll", onScroll);
+    // window.addEventListener("scroll", onScroll);
   }, [initLoad]);
   useEffect(() => {
     if (isLoading) {
@@ -48,11 +48,11 @@ function App() {
       enableBodyScroll(loadingRef.current);
     }
   }, [isLoading]);
-  const onScroll = (e) => {
-    const scrollTop = ("scroll", e.srcElement.scrollingElement.scrollTop);
+  // const onScroll = (e) => {
+  //   const scrollTop = ("scroll", e.srcElement.scrollingElement.scrollTop);
 
-    setScrollY(scrollTop);
-  };
+  //   setScrollY(scrollTop);
+  // };
 
   const onLoadingEnd = () => {
     setIsLoading(false);
@@ -70,28 +70,28 @@ function App() {
     });
   };
 
-  const handleParallax = ({ element = null, offset = 0, render }) => {
-    const windowHeight = window.innerHeight;
-    if (element) {
-      const offsetY = offset < 0 ? 0 : offset;
-      const elemenTop = element.getBoundingClientRect().top + offsetY + 180;
-      const elementPosition = elemenTop - windowHeight;
-      if (offsetY >= elementPosition) {
-        return render();
-      }
-    }
-  };
-  const activeEle = (target) => {
-    return handleParallax({
-      element: target,
-      offset: scrollY,
-      render: () => {
-        return true;
-      },
-    });
-  };
+  // const handleParallax = ({ element = null, offset = 0, render }) => {
+  //   const windowHeight = window.innerHeight;
+  //   if (element) {
+  //     const offsetY = offset < 0 ? 0 : offset;
+  //     const elemenTop = element.getBoundingClientRect().top + offsetY + 180;
+  //     const elementPosition = elemenTop - windowHeight;
+  //     if (offsetY >= elementPosition) {
+  //       return render();
+  //     }
+  //   }
+  // };
+  // const activeEle = (target) => {
+  //   return handleParallax({
+  //     element: target,
+  //     offset: scrollY,
+  //     render: () => {
+  //       return true;
+  //     },
+  //   });
+  // };
 
-  const calDom = document.querySelector(".calendar-container");
+  // const calDom = document.querySelector(".calendar-container");
 
   return (
     <div className="wrap">
@@ -99,7 +99,7 @@ function App() {
       {pageLoad && (
         <>
           <MessageContent />
-          <Calendar active={activeEle(calDom)} />
+          {/* <Calendar active={activeEle(calDom)} /> */}
           <Gallery />
           <Location />
           <Gift />

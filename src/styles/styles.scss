@@ -134,7 +134,7 @@ body {
     .name {
       position: relative;
       display: inline-block;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 800;
       margin: 0 5px;
       vertical-align: middle;
@@ -182,6 +182,7 @@ body {
     }
     p {
       opacity: 0;
+      font-size: 15px;
     }
     .date {
       text-align: center;
@@ -213,6 +214,7 @@ body {
       font-size: 15px;
       line-height: 32px;
       text-align: center;
+      opacity: 0.8;
     }
   }
   .contact {
@@ -367,7 +369,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     max-width: $maxWidth;
     flex-wrap: wrap;
     .paral-image {
@@ -471,7 +473,7 @@ body {
 
 //location
 .location-container {
-  padding: 60px 0;
+  padding: 30px 0 50px;
   max-width: $maxWidth;
   margin: 0 auto;
   .map-wrapper {
@@ -480,7 +482,7 @@ body {
   .info-box-wrapper {
     position: relative;
     padding: $layoutPadding;
-    padding-top: 38px;
+    padding-top: 30px;
     .btn-call {
       position: absolute;
       right: 30px;
@@ -490,8 +492,8 @@ body {
     .title {
       padding: 0;
       h3 {
-        font-size: 18px;
-        line-height: 1.45;
+        font-size: 20px;
+        line-height: 1.3;
         text-align: center;
         font-weight: 600;
       }
@@ -501,7 +503,7 @@ body {
       .tel {
         padding: 0;
         font-size: 14px;
-        margin-top: 13px;
+        margin-top: 6px;
         display: block;
         text-align: center;
         opacity: 0.8;
@@ -509,7 +511,7 @@ body {
     }
     .dic {
       padding: 0;
-      margin-top: 40px;
+      margin-top: 30px;
       text-align: center;
       h3 {
         padding: 0;
@@ -518,7 +520,7 @@ body {
       }
       p {
         padding: 0;
-        margin-top: 10px;
+        margin-top: 6px;
         font-size: 14px;
         opacity: 0.8;
       }
@@ -625,13 +627,13 @@ body {
 }
 .gift-container {
   padding: 0 30px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-top: 10px;
   h2 {
     text-align: center;
 
     margin-bottom: 25px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
   }
   .dic {
@@ -646,7 +648,7 @@ body {
       font-weight: 600;
     }
     & + .dic {
-      margin: 6px 0;
+      margin: 8px 0;
     }
   }
   .gift-box {
