@@ -11,7 +11,7 @@ function MainLoading({ load, onEnd }) {
   useEffect(() => {
     loaderInterval.current = setInterval(() => {
       setProgress(progress + getRandomArbitrary(10, 20));
-    }, 500);
+    }, 600);
     if (progress >= 70) {
       clearInterval(loaderInterval.current);
     }
@@ -24,7 +24,7 @@ function MainLoading({ load, onEnd }) {
         setTimeout(() => {
           return onEnd(true);
         }, 800);
-      }, 500);
+      }, 600);
     }
     return () => clearInterval(loaderInterval.current);
   }, [progress, load, onEnd]);
@@ -33,7 +33,7 @@ function MainLoading({ load, onEnd }) {
     <div className="main-loading-wrap">
       <div className="main-loading">
         <div className={classnames("text-wrap", { active: showText })}>
-          <div className="text">{`Joohyung & Eunjoon`}</div>
+          <div className="text">{`🤵Sanghyeon & ChaeHui👰`}</div>
         </div>
         <div className="progress-wrap">
           <div className="progress" style={{ width: `${progress}%` }} />

@@ -20,16 +20,22 @@ function MessageContent() {
         </div>
         <div className="contact">
           <div className="dic">
-            <span>이재풍</span>
-            <span>고애숙의</span>
-            <span className="role">차남</span>
-            <span className="name">주형</span>
+            <span>한웅진</span>
+            <span>길정자의</span>
+            <span className="role">장남</span>
+            <span className="name">상현</span>
+			<span className="phonecall">
+				<a href="tel:010-4129-3090"> 📞</a>
+			</span>
           </div>
           <div className="dic">
-            <span>이성원</span>
-            <span>유승인의</span>
+            <span>이지형</span>
+            <span>김경희의</span>
             <span className="role">장녀</span>
-            <span className="name">은준</span>
+            <span className="name">채희</span>
+			<span className="phonecall">
+				<a href="tel:010-5063-2954"> 📞</a>
+			</span>
           </div>
         </div>
       </div>

@@ -7,14 +7,14 @@ function Location() {
     const s1 = document.createElement("script");
     s1.type = "text/javascript";
     s1.src =
-      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=465c5cbc31aebf9f041472f81a7ce063&libraries=services&autoload=false";
+      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=aafac5abf9939148b3cc92475dde1380&libraries=services&autoload=false";
     document.head.appendChild(s1);
     s1.onload = () => {
       kakao.maps.load(() => {
         let container = document.getElementById("map");
         var position = new kakao.maps.LatLng(
-          37.48240809185324,
-          127.03566292830315
+          36.349287,
+          127.438179
         );
         let options = {
           center: position,
@@ -44,7 +44,7 @@ function Location() {
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var customOverlay = new kakao.maps.CustomOverlay({
           position: position,
-          content: `<div class="marker">엘타워</div>`,
+          content: `<div class="marker">선샤인웨딩홀</div>`,
           yAnchor: 3,
           xAnchor: 0.5,
         });
@@ -52,7 +52,7 @@ function Location() {
         customOverlay.setMap(map);
         kakao.maps.event.addListener(marker, "click", function () {
           // 마커 위에 인포윈도우를 표시합니다
-          window.open("http://kko.to/pJ15sTzYp");
+          window.open("http://kko.to/lLZaTZr4p");
         });
 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
@@ -75,20 +75,32 @@ function Location() {
       </div>
       <div className="info-box-wrapper">
         <div className="title">
-          <h3>서울 서초구 강남대로 213</h3>
-          <h3>엘타워 5층 오르체홀</h3>
-          <a href="tel:02-526-8600" className="tel">
-            02-526-8600
+          <h3>대전 동구 동서대로 1700</h3>
+          <h3>선샤인웨딩홀 5층 그랜드볼룸</h3>
+          <a href="tel:042-673-8800" className="tel">
+            042-673-8800
           </a>
         </div>
-        <div className="dic subway">
-          <h3>지하철</h3>
-          <p>3호선 양재역 9번출구 바로 앞</p>
+
+		<div className="dic bus">
+          <h3>시내버스</h3>
+          <p>102, 105, 106, 201, 501, 601, 607, 611, 616, 701 802, 2(급행)</p>
         </div>
+
+		<div className="dic exbus">
+          <h3>고속/시외버스</h3>
+          <p>도보로 10분 거리</p>
+        </div>
+		
+		<div className="dic bus">
+          <h3>자가용</h3>
+          <p>대전 복합터미널 맞은편</p>
+		</div>
+		
         <div className="dic bus">
           <h3>주차</h3>
           <p>건물 내 주차장 1600대 가능</p>
-        </div>
+		</div>
       </div>
     </div>
   );

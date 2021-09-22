@@ -15,7 +15,7 @@ body {
 }
 //map marker
 .marker {
-  width: 60px;
+  width: 90px;
   height: 27px;
   border: none;
   border-radius: 30px;
@@ -573,7 +573,7 @@ body {
 
   .main-loading {
     position: relative;
-    width: 150px;
+    width: 250px;
     height: 30px;
     top: -20px;
     overflow: hidden;
@@ -585,7 +585,7 @@ body {
     margin: 0 auto;
     bottom: 0;
     height: 1px;
-    width: 140px;
+    width: 180px;
 
     margin: 0 auto;
     .progress {
@@ -599,7 +599,7 @@ body {
   }
   .text-wrap {
     position: absolute;
-    top: 5px;
+    top: 15px;
     left: 0;
     width: 100%;
     display: block;

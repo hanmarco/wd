@@ -32,12 +32,12 @@ function TopContent({ load }) {
         </div>
         <div className="info-box-wrapper">
           <div className="name-box-wrapper">
-            <span className="name first">이주형</span>
+            <span className="name first">한상현</span>
             <span className="slash" />
-            <span className="name second">이은준</span>
+            <span className="name second">이채희</span>
           </div>
-          <p className="date">2021년 1월 9일 토요일 오전 11시</p>
-          <p className="location">양재역 엘타워 5층 오르체홀</p>
+          <p className="date">2022년 1월 22일 토요일 오후 1시</p>
+          <p className="location">대전 선샤인웨딩홀 5층 그랜드볼룸</p>
         </div>
       </div>
     </div>

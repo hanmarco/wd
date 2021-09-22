@@ -5,26 +5,26 @@ export default function Gift() {
   const data = {
     man: [
       {
-        title: "신랑 이주형 계좌번호",
+        title: "신랑 한상현 계좌번호",
         bank: "국민은행",
-        account: "90190367037",
+        account: "94129309067",
       },
       {
-        title: "혼주 이재풍 계좌번호",
+        title: "혼주 한웅진 계좌번호",
         bank: "농협",
-        account: "3520754218303",
+        account: "3010012514091",
       },
     ],
     woman: [
       {
-        title: "신부 이은준 계좌번호",
-        bank: "국민은행",
-        account: "98930244362",
+        title: "신부 이채희 계좌번호",
+        bank: "우리은행",
+        account: "1002052576364",
       },
       {
-        title: "혼주 이성원 계좌번호",
+        title: "혼주 이지형 계좌번호",
         bank: "국민은행",
-        account: "79620201023785",
+        account: "1",
       },
     ],
   };
