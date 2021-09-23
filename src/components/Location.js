@@ -88,19 +88,10 @@ function Location() {
         </div>
 
 		<div className="dic exbus">
-          <h3>고속/시외버스</h3>
-          <p>도보로 10분 거리</p>
+          <h3>고속/시외버스/자가용</h3>
+          <p>대전 복합터미널 맞은편 (도보로 10분 거리)</p>
         </div>
-		
-		<div className="dic bus">
-          <h3>자가용</h3>
-          <p>대전 복합터미널 맞은편</p>
-		</div>
-		
-        <div className="dic bus">
-          <h3>주차</h3>
-          <p>건물 내 주차장 1600대 가능</p>
-		</div>
+	
       </div>
     </div>
   );
