@@ -110,7 +110,7 @@ function Gallery() {
           })}
         </div>
       </div>
-      <div className="btn-more" onClick={handleClick.bind(this, 7)}>
+      <div className="btn-more" onClick={handleClick.bind(this, 5)}>
         더 많은 사진 보기
       </div>
 
