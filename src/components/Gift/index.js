@@ -9,11 +9,13 @@ export default function Gift() {
         bank: "국민은행",
         account: "94129309067",
       },
+	  /*
       {
         title: "혼주 한웅진 계좌번호",
         bank: "농협",
         account: "3010012514091",
       },
+	  */
     ],
     woman: [
       {
@@ -21,11 +23,13 @@ export default function Gift() {
         bank: "우리은행",
         account: "1002052576364",
       },
+	  	  /*
       {
         title: "혼주 이지형 계좌번호",
         bank: "국민은행",
         account: "1",
       },
+	  	  */
     ],
   };
   const [showM, setShowM] = useState(false);
